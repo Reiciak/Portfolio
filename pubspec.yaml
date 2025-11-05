@@ -22,9 +22,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/MainPhoto.png
-    - assets/images/About.PNG
-    - assets/images/Skills.PNG
-    - assets/images/Projects.PNG
+    - assets/images/About.png
+    - assets/images/Skills.png
+    - assets/images/Projects.png
     - assets/images/linkedinIcon.png
     - assets/images/githubIcon.png
     - assets/images/gmailIcon.png
