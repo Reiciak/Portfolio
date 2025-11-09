@@ -6,10 +6,16 @@ Column _buildButtonContent(String imagePath, String text, double fontSize) {
     children: [
       Expanded(
         flex: 6,
-        child: SizedBox.expand(
-          child: Image(
-            image: AssetImage('assets/images/$imagePath.png'),
-            fit: BoxFit.fill,
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(8.0),
+            topRight: Radius.circular(8.0),
+          ),
+          child: SizedBox.expand(
+            child: Image(
+              image: AssetImage('assets/images/$imagePath.png'),
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       ),
@@ -47,8 +53,21 @@ class SectionNavbar extends StatelessWidget {
         final responsiveFontSize = min(dynamicFontSize, maxFontSize);
         final double width = constraints.maxWidth;
         final double height = constraints.maxHeight;
+        final containerDecoration = BoxDecoration(
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        );
 
-        return ElevatedButton(
+        return Container(
+            decoration: containerDecoration,
+            child: ElevatedButton(
           onPressed: (){},
           onLongPress: null,
           style: ElevatedButton.styleFrom(
@@ -64,6 +83,7 @@ class SectionNavbar extends StatelessWidget {
             foregroundColor: Colors.white,
           ),
             child: _buildButtonContent(imagePath, text, responsiveFontSize),
+            ),
         );
       },
     );
