@@ -65,25 +65,30 @@ class SectionNavbar extends StatelessWidget {
           ],
         );
 
-        return Container(
-            decoration: containerDecoration,
-            child: ElevatedButton(
-          onPressed: (){},
-          onLongPress: null,
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
+        return Center(
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 250.0),
+            child: Container(
+              decoration: containerDecoration,
+              child: ElevatedButton(
+                onPressed: () {},
+                onLongPress: null,
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  fixedSize: Size(
+                    width,
+                    height,
+                  ),
+                  backgroundColor: const Color(0xFFAED9FF),
+                  foregroundColor: Colors.white,
+                ),
+                child: _buildButtonContent(imagePath, text, responsiveFontSize),
+              ),
             ),
-            fixedSize: Size(
-              width,
-              height,
-            ),
-            backgroundColor: const Color(0xFFAED9FF),
-            foregroundColor: Colors.white,
           ),
-            child: _buildButtonContent(imagePath, text, responsiveFontSize),
-            ),
         );
       },
     );
