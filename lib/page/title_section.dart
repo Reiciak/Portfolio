@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/configuration_files/container_decoration.dart';
 import 'dart:math';
 
 class TitleSection extends StatelessWidget {
@@ -20,17 +21,7 @@ class TitleSection extends StatelessWidget {
               children: [
                 Container(
                   height: bannerHeight,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF0B0720),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
+                  decoration: containerDecoration(),
                 ),
                 Positioned(
                   top: bannerHeight - avatarRadius,
@@ -38,17 +29,9 @@ class TitleSection extends StatelessWidget {
                   child: Container(
                     width: avatarDiameter,
                     height: avatarDiameter,
-                    decoration: BoxDecoration(
+                    decoration: containerDecoration(
                       shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
-                    ),
+                      showShadow: true),
                     child: CircleAvatar(
                       radius: avatarRadius,
                       backgroundImage: const AssetImage(
