@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/configuration_files/container_decoration.dart';
-import 'dart:math';
+import 'package:portfolio/configuration_files/responsive_layout.dart';
 
 Column _buildButtonContent(String imagePath, String text, double fontSize) {
   return Column(
@@ -35,7 +35,6 @@ Column _buildButtonContent(String imagePath, String text, double fontSize) {
   );
 }
 
-
 class SectionNavbar extends StatelessWidget {
   final String imagePath;
   final String text;
@@ -49,11 +48,7 @@ class SectionNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        const maxFontSize = 15.0;
-        final dynamicFontSize = constraints.maxHeight * 0.3;
-        final responsiveFontSize = min(dynamicFontSize, maxFontSize);
-        final double width = constraints.maxWidth;
-        final double height = constraints.maxHeight;
+        final responsiveLayout = ResponsiveLayout(constraints: constraints);
 
         return Center(
           child: Container(
@@ -69,13 +64,13 @@ class SectionNavbar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   fixedSize: Size(
-                    width,
-                    height,
+                    responsiveLayout.width,
+                    responsiveLayout.height,
                   ),
                   backgroundColor: const Color(0xFFAED9FF),
                   foregroundColor: Colors.white,
                 ),
-                child: _buildButtonContent(imagePath, text, responsiveFontSize),
+                child: _buildButtonContent(imagePath, text, responsiveLayout.fontSize),
               ),
             ),
           ),
