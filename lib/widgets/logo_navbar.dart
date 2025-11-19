@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/configuration_files/container_decoration.dart';
 
 class LogoNavbar extends StatelessWidget {
   const LogoNavbar({super.key});
@@ -27,19 +28,7 @@ class LogoNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
-
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
-      ),
+      decoration: containerDecoration(color: Colors.white, borderRadius: 30.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
