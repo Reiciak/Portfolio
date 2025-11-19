@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/configuration_files/container_decoration.dart';
 import 'dart:math';
 
 Column _buildButtonContent(String imagePath, String text, double fontSize) {
@@ -53,23 +54,12 @@ class SectionNavbar extends StatelessWidget {
         final responsiveFontSize = min(dynamicFontSize, maxFontSize);
         final double width = constraints.maxWidth;
         final double height = constraints.maxHeight;
-        final containerDecoration = BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        );
 
         return Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 250.0),
             child: Container(
-              decoration: containerDecoration,
+              decoration: containerDecoration(borderRadius: 8.0),
               child: ElevatedButton(
                 onPressed: () {},
                 onLongPress: null,
