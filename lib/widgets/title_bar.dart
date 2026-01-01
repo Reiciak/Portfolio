@@ -16,24 +16,24 @@ class TitleBar extends StatelessWidget {
       builder: (context, constraints) {
         final responsiveLayout = ResponsiveLayout(constraints: constraints);
 
-        return Center(
-            child: Container(
-              width: responsiveLayout.width * 0.3,
-              height: responsiveLayout.height * 0.3,
-              decoration: containerDecoration(
-                  color: Color(0xFFFFFFFF),
-                  borderRadius: 32.0),
-              child: Center(
-                child: Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: responsiveLayout.fontSize,
-                    color: Color(0xFF0B0720),
-                  ),
+        return Container(
+          width: responsiveLayout.width * 0.3,
+          height: responsiveLayout.height * 0.3,
+          decoration: containerDecoration(
+            color: Color(0xFFFFFFFF),
+            borderRadius: 32.0
+          ),
+            child: Center(
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: responsiveLayout.fontSize,
+                fontWeight: FontWeight.w800,
+                  color: Color(0xFF0B0720),
                 ),
               ),
-            )
+            ),
         );
       },
     );
