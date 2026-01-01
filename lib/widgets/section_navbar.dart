@@ -49,11 +49,9 @@ class SectionNavbar extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final responsiveLayout = ResponsiveLayout(constraints: constraints);
-
         return Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 250.0),
-            child: Container(
               decoration: containerDecoration(borderRadius: 8.0),
               child: ElevatedButton(
                 onPressed: () {},
@@ -72,7 +70,6 @@ class SectionNavbar extends StatelessWidget {
                 ),
                 child: _buildButtonContent(imagePath, text, responsiveLayout.fontSize),
               ),
-            ),
           ),
         );
       },
