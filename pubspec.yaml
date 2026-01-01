@@ -17,6 +17,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  mocktail: ^1.0.0
+  integration_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
@@ -28,6 +31,10 @@ flutter:
     - assets/images/linkedinIcon.png
     - assets/images/githubIcon.png
     - assets/images/gmailIcon.png
+    - assets/images/calculator.png
+    - assets/images/bowlingVR.png
+    - assets/images/chatgptGame.png
+
 
 
   # fonts:
