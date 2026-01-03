@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/configuration_files/projects_details.dart';
 import 'package:portfolio/configuration_files/responsive_layout.dart';
-import 'package:portfolio/widgets/title_bar.dart';
 
 class ProjectItem extends StatelessWidget {
   final Project project;
