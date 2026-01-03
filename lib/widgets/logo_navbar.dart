@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/configuration_files/container_decoration.dart';
-import '../widgets/social_media_link_manager.dart';
 import 'package:portfolio/widgets/social_media_icon_manager.dart';
 
 class LogoNavbar extends StatelessWidget {
@@ -14,7 +13,7 @@ class LogoNavbar extends StatelessWidget {
       child: SocialMediaIconManager(
         direction: Axis.vertical,
         spacing: 16.0,
-        useWhiteIcons: false, // Navbar is light -> use black icons
+        useWhiteIcons: false,
       ),
     );
   }

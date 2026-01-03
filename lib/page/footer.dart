@@ -25,24 +25,20 @@ class Footer extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        SocialMediaIconManager(
-                          direction: Axis.horizontal,
-                          spacing: 8.0,
-                          useWhiteIcons: true,
+                    SocialMediaIconManager(
+                      direction: Axis.horizontal,
+                        spacing: 8.0,
+                        useWhiteIcons: true,
                         ),
 
-                        Text(
-                          '© $year - KAROLINA BOLEK '
-                          'MADE WITH DART/FLUTTER',
-                          style: TextStyle(
-                            fontSize: responsiveLayout.fontSize,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ),
-                      ],
+                      Text(
+                        '© $year - KAROLINA BOLEK '
+                        'MADE WITH DART/FLUTTER',
+                        style: TextStyle(
+                        fontSize: responsiveLayout.fontSize/1.4,
+                        fontWeight: FontWeight.w800,
+                        color: Color(0xFFFFFFFF),
+                      ),
                     ),
                   ],
                 ),
