@@ -29,7 +29,8 @@ flutter:
     - assets/images/Skills.png
     - assets/images/Projects.png
     - assets/images/linkedinIcon.png
-    - assets/images/githubIcon.png
+    - assets/images/githubIcon_black.png
+    - assets/images/githubIcon_white.png
     - assets/images/gmailIcon.png
     - assets/images/calculator.png
     - assets/images/bowlingVR.png
