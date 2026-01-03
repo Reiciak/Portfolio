@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/configuration_files/container_decoration.dart';
 import 'package:portfolio/configuration_files/responsive_layout.dart';
-import '../widgets/social_media_link_manager.dart';
-import 'package:portfolio/configuration_files/social_media_links.dart';
+import 'package:portfolio/widgets/social_media_icon_manager.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -17,9 +16,7 @@ class Footer extends StatelessWidget {
         return Container(
           width: responsiveLayout.width,
           height: responsiveLayout.height,
-          decoration: containerDecoration(
-            color: Color(0xFF0E0A22),
-          ),
+          decoration: containerDecoration(color: Color(0xFF0E0A22)),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -29,33 +26,23 @@ class Footer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        SocialMediaLinkManager(
-                          imagePath: 'linkedinIcon',
-                          url: 'https://www.linkedin.com/in/karolinabolek1/',
+                        SocialMediaIconManager(
+                          direction: Axis.horizontal,
+                          spacing: 8.0,
+                          useWhiteIcons: true,
                         ),
-                        const SizedBox(width: 8),
-                        SocialMediaLinkManager(
-                          imagePath: 'githubIcon_white',
-                          url: 'https://github.com/Reiciak',
-                        ),
-                        const SizedBox(width: 8),
-                        SocialMediaLinkManager(
-                          imagePath: 'gmailIcon',
-                          url: 'mailto:karolina16478@gmail.com',
+
+                        Text(
+                          '© $year - KAROLINA BOLEK '
+                          'MADE WITH DART/FLUTTER',
+                          style: TextStyle(
+                            fontSize: responsiveLayout.fontSize,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xFFFFFFFF),
+                          ),
                         ),
                       ],
-                    ),
-
-                    Text(
-                      '© $year - KAROLINA BOLEK '
-                          'MADE WITH DART/FLUTTER',
-                      style: TextStyle(
-                        fontSize: responsiveLayout.fontSize,
-                        fontWeight: FontWeight.w800,
-                        color: Color(0xFFFFFFFF),
-                      ),
                     ),
                   ],
                 ),
