@@ -11,7 +11,7 @@ enum Skill {
   cSharp('C#'),
   openAI('OpenAI API'),
   blender('Blender'),
-  angelski('Angieskiki B2');
+  english('ENG B2');
 
 final String displayName;
 
