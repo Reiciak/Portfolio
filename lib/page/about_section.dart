@@ -29,7 +29,7 @@ class AboutSection extends StatelessWidget {
                     child: CircleAvatar(
                       radius: avatarRadius,
                       backgroundImage: const AssetImage(
-                        'assets/images/MainPhoto.png',
+                        'assets/images/PhotoAboutMe.png',
                       ),
                     ),
                   ),
