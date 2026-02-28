@@ -53,3 +53,5 @@ linux/
 macos/
 web/
 windows/
+test/
+integration_test/
