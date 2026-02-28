@@ -1,36 +1,27 @@
-import 'package:flutter/material.dart';
+// D:/Portfolio/lib/page/skill_section.dart (Original)
 
-class SkillSection extends StatelessWidget {
-  const SkillSection({super.key});
+import 'package:flutter/material.dart';
+import '../widgets/skill_tile.dart'; // Import the individual tile
+import 'package:portfolio/configuration_files/skills_list.dart';
+
+class SectionsTile extends StatelessWidget {
+  const SectionsTile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Skills:',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            'XDD',
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () {
-              // Handle button press
-            },
-            child: const Text('Learn More'),
-          ),
-        ],
-      ),
+    final List<Skill> skills = Skill.values;
+
+    return GridView.extent(
+      maxCrossAxisExtent: 200.0,
+      crossAxisSpacing: 8.0,
+      mainAxisSpacing: 8.0,
+      childAspectRatio: 1.0,
+      physics: const NeverScrollableScrollPhysics(), // Prevents scrolling inside SingleChildScrollView
+      children: [
+        // Iterates through the loaded skills and creates a tile for each
+        for (final skill in skills)
+          SkillTile(skill: skill),
+      ],
     );
   }
 }

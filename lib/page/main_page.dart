@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'title_section.dart';
 import 'sections_menu.dart';
 import 'projects_section.dart';
+import 'about_section.dart';
+import 'skill_section.dart';
 import '../widgets/title_bar.dart';
 import '../widgets/logo_navbar.dart';
 import 'footer.dart';
@@ -23,9 +25,19 @@ class MainPage extends StatelessWidget {
                 children: [
                   const TitleSection(),
                   const SizedBox(height: 24),
-                  const SizedBox(height: 200, child: SectionsMenu()),
+                  const SizedBox(height: 200,
+                    child: SectionsMenu()
+                  ),
+                  const SizedBox(height: 48),
+                  SizedBox(
+                    height: 450,
+                    child: AboutSection(),
+                  ),
                   const SizedBox(height: 24),
-
+                  const SizedBox(height: 300,
+                    child: SectionsTile(),
+                  ),
+                  const SizedBox(height: 24),
                   Align(
                     alignment: Alignment.center,
                     child: SizedBox(
