@@ -6,15 +6,18 @@ import 'package:portfolio/configuration_files/skills_list.dart';
 Widget _buildTile(Skill skill) {
   return LayoutBuilder(
     builder: (context, constraints) {
-      final responsiveLayout = ResponsiveLayout(constraints: constraints);
+      final screenWidth = MediaQuery.of(context).size.width;
+      final responsiveLayout = ResponsiveLayout(
+        constraints: constraints,
+        screenWidth: screenWidth,
+      );
 
       return AspectRatio(
         aspectRatio: 1.0,
         child: Container(
           decoration: containerDecoration(borderRadius: 8.0),
           child: ElevatedButton(
-            onPressed: () {
-            },
+            onPressed: () {},
             onLongPress: null,
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.zero,
@@ -27,9 +30,7 @@ Widget _buildTile(Skill skill) {
             child: Text(
               skill.displayName,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: responsiveLayout.fontSize,
-              ),
+              style: TextStyle(fontSize: responsiveLayout.fontSize),
             ),
           ),
         ),
@@ -37,7 +38,6 @@ Widget _buildTile(Skill skill) {
     },
   );
 }
-
 
 class SkillTile extends StatelessWidget {
   final List<Skill> skills;
@@ -57,13 +57,15 @@ class SkillTile extends StatelessWidget {
 
         return Expanded(
           child: Padding(
-            padding: EdgeInsets.only(bottom: rowIndex < rows - 1 ? 8.0 : 0, left: 16.0, right: 16.0),
+            padding: EdgeInsets.only(
+              bottom: rowIndex < rows - 1 ? 8.0 : 0,
+              left: 16.0,
+              right: 16.0,
+            ),
             child: Row(
               children: [
                 for (int i = 0; i < skillsInRow.length; i++) ...[
-                  Expanded(
-                    child: _buildTile(skillsInRow[i]),
-                  ),
+                  Expanded(child: _buildTile(skillsInRow[i])),
                   if (i < skillsInRow.length - 1) const SizedBox(width: 16.0),
                 ],
               ],

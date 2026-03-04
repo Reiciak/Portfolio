@@ -43,7 +43,11 @@ class SectionNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final layout = ResponsiveLayout(constraints: constraints);
+        final screenWidth = MediaQuery.of(context).size.width;
+        final layout = ResponsiveLayout(
+          constraints: constraints,
+          screenWidth: screenWidth,
+        );
         return Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 250.0),

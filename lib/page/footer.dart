@@ -10,7 +10,11 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final responsiveLayout = ResponsiveLayout(constraints: constraints);
+        final screenWidth = MediaQuery.of(context).size.width;
+        final responsiveLayout = ResponsiveLayout(
+          constraints: constraints,
+          screenWidth: screenWidth,
+        );
         final year = DateTime.now().year;
 
         return Container(
@@ -27,15 +31,15 @@ class Footer extends StatelessWidget {
                   children: [
                     SocialMediaIconManager(
                       direction: Axis.horizontal,
-                        spacing: 8.0,
-                        useWhiteIcons: true,
-                        ),
+                      spacing: 8.0,
+                      useWhiteIcons: true,
+                    ),
 
-                      Text(
-                        '© $year - KAROLINA BOLEK '
-                        'MADE WITH DART/FLUTTER',
-                        style: TextStyle(
-                        fontSize: responsiveLayout.fontSize/1.4,
+                    Text(
+                      '© $year - KAROLINA BOLEK '
+                      'MADE WITH DART/FLUTTER',
+                      style: TextStyle(
+                        fontSize: responsiveLayout.fontSize / 1.4,
                         fontWeight: FontWeight.w800,
                         color: Color(0xFFFFFFFF),
                       ),

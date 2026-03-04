@@ -5,16 +5,17 @@ import 'package:portfolio/configuration_files/responsive_layout.dart';
 class ProjectItem extends StatelessWidget {
   final Project project;
 
-  const ProjectItem({
-    super.key,
-    required this.project,
-  });
+  const ProjectItem({super.key, required this.project});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final responsiveLayout = ResponsiveLayout(constraints: constraints);
+        final screenWidth = MediaQuery.of(context).size.width;
+        final responsiveLayout = ResponsiveLayout(
+          constraints: constraints,
+          screenWidth: screenWidth,
+        );
         final baseFontSize = responsiveLayout.fontSize;
         final imageWidth = constraints.maxWidth;
         final imageHeight = imageWidth * (6 / 16);
@@ -27,10 +28,7 @@ class ProjectItem extends StatelessWidget {
               SizedBox(
                 width: imageWidth,
                 height: imageHeight,
-                child: Image.asset(
-                  project.imagePath,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.asset(project.imagePath, fit: BoxFit.cover),
               ),
 
               const SizedBox(height: 10),
@@ -48,10 +46,7 @@ class ProjectItem extends StatelessWidget {
 
               Text(
                 project.description,
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: baseFontSize,
-                ),
+                style: TextStyle(color: Colors.white70, fontSize: baseFontSize),
               ),
 
               const SizedBox(height: 8),

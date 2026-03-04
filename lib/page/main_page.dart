@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../configuration_files/responsive_layout.dart';
 import 'title_section.dart';
 import 'sections_menu.dart';
 import 'projects_section.dart';
@@ -12,19 +11,8 @@ import 'footer.dart';
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    // final constraints = BoxConstraints(
-    //   maxHeight: MediaQuery.of(context).size.height,
-    //   maxWidth: MediaQuery.of(context).size.width,
-    // );
-    // final skillsSectionHeight = ResponsiveLayout(
-    //   constraints: constraints,
-    //   heightMultiplier: 0.25,
-    //   maxFontSize: 100,
-    // ).height;
-
     return Scaffold(
       appBar: AppBar(backgroundColor: const Color(0xFF0E0A22)),
       body: Stack(
@@ -37,19 +25,11 @@ class MainPage extends StatelessWidget {
                 children: [
                   const TitleSection(),
                   const SizedBox(height: 24),
-                  const SizedBox(height: 200,
-                    child: SectionsMenu()
-                  ),
+                  const SizedBox(height: 200, child: SectionsMenu()),
                   const SizedBox(height: 48),
-                  SizedBox(
-                    height: 450,
-                    child: AboutSection(),
-                  ),
+                  SizedBox(height: 450, child: AboutSection()),
                   const SizedBox(height: 24),
-                  SizedBox(
-                    height: 300,//skillsSectionHeight,
-                    child: SectionsTile(),
-                  ),
+                  SizedBox(height: 300, child: SectionsTile()),
                   const SizedBox(height: 24),
                   Align(
                     alignment: Alignment.center,

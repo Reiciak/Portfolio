@@ -10,7 +10,11 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final responsiveLayout = ResponsiveLayout(constraints: constraints);
+        final screenWidth = MediaQuery.of(context).size.width;
+        final responsiveLayout = ResponsiveLayout(
+          constraints: constraints,
+          screenWidth: screenWidth,
+        );
         final double avatarRadius = min(constraints.maxWidth * 0.2, 80.0);
 
         return Container(
@@ -20,7 +24,7 @@ class AboutSection extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Align(
                   alignment: Alignment.topCenter,
@@ -44,8 +48,8 @@ class AboutSection extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Text(
                           'W wolnym czasie piszę książki,\n '
-                              'a na ich podstawię tworzę gry\n'
-                              'mobilne',
+                          'a na ich podstawię tworzę gry\n'
+                          'mobilne',
                           style: TextStyle(
                             fontSize: responsiveLayout.fontSize,
                             fontWeight: FontWeight.w800,
@@ -60,8 +64,8 @@ class AboutSection extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Text(
                           'Ukończyłam studia inżynierskie \n'
-                            'oraz magisterskie na uniwersytecie\n'
-                            'Bielsko-Bialskim',
+                          'oraz magisterskie na uniwersytecie\n'
+                          'Bielsko-Bialskim',
                           style: TextStyle(
                             fontSize: responsiveLayout.fontSize,
                             fontWeight: FontWeight.w800,
