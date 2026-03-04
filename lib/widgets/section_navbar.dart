@@ -56,7 +56,7 @@ class SectionNavbar extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                fixedSize: Size(layout.width, layout.tileHeight),
+                fixedSize: Size(layout.width, layout.cappedHeight),
                 backgroundColor: const Color(0xFFAED9FF),
                 foregroundColor: Colors.white,
               ),
