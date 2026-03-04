@@ -31,11 +31,22 @@ class TitleSection extends StatelessWidget {
                     height: avatarDiameter,
                     decoration: containerDecoration(
                       shape: BoxShape.circle,
-                      showShadow: true),
-                    child: CircleAvatar(
-                      radius: avatarRadius,
-                      backgroundImage: const AssetImage(
-                          'assets/images/MainPhoto.png'),
+                      showShadow: true,
+                    ),
+                    child: ClipOval(
+                      child: ColoredBox(
+                        color: Colors.white,
+                        child: Transform.scale(
+                          scale: 0.9,
+                          child: Image.asset(
+                            'assets/images/MainPhoto.png',
+                            width: avatarDiameter,
+                            height: avatarDiameter,
+                            fit: BoxFit.cover,
+                            alignment: const Alignment(0, -0.4),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
