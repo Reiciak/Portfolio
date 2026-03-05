@@ -7,6 +7,7 @@ class ResponsiveLayout {
   final double maxFontSize;
   final double minFontSize;
   final double aspectRatio;
+  final double fontSizeMultiplier;
 
   ResponsiveLayout({
     required this.constraints,
@@ -14,6 +15,7 @@ class ResponsiveLayout {
     this.maxFontSize = 20.0,
     this.minFontSize = 10.0,
     this.aspectRatio = 1.3,
+    this.fontSizeMultiplier = 0.02,
   });
 
   double get height => constraints.maxHeight;
@@ -23,6 +25,6 @@ class ResponsiveLayout {
   double get cappedHeight => min(height, width * aspectRatio);
 
   double get fontSize {
-    return (screenWidth * 0.02).clamp(minFontSize, maxFontSize);
+    return (screenWidth * fontSizeMultiplier).clamp(minFontSize, maxFontSize);
   }
 }

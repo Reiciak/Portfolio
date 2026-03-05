@@ -10,6 +10,7 @@ Widget _buildTile(Skill skill) {
       final responsiveLayout = ResponsiveLayout(
         constraints: constraints,
         screenWidth: screenWidth,
+        fontSizeMultiplier: 0.04,
       );
 
       return AspectRatio(
@@ -46,7 +47,15 @@ class SkillTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const int columns = 6;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final int columns;
+    if (screenWidth < 480) {
+      columns = 3;
+    } else if (screenWidth < 768) {
+      columns = 4;
+    } else {
+      columns = 6;
+    }
     final int rows = (skills.length / columns).ceil();
 
     return Column(
