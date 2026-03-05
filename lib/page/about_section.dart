@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/configuration_files/about_texts.dart';
 import 'package:portfolio/configuration_files/container_decoration.dart';
 import 'package:portfolio/configuration_files/responsive_layout.dart';
 import 'dart:math';
@@ -47,9 +48,7 @@ class AboutSection extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          'W wolnym czasie piszę książki,\n '
-                          'a na ich podstawię tworzę gry\n'
-                          'mobilne',
+                          aboutTexts[0],
                           style: TextStyle(
                             fontSize: responsiveLayout.fontSize,
                             fontWeight: FontWeight.w800,
@@ -63,9 +62,7 @@ class AboutSection extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          'Ukończyłam studia inżynierskie \n'
-                          'oraz magisterskie na uniwersytecie\n'
-                          'Bielsko-Bialskim',
+                          aboutTexts[1],
                           style: TextStyle(
                             fontSize: responsiveLayout.fontSize,
                             fontWeight: FontWeight.w800,
