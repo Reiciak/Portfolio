@@ -24,9 +24,7 @@ class MainPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const TitleSection(),
-                  const SizedBox(height: 24),
-                  const SizedBox(height: 200, child: SectionsMenu()),
-                  const SizedBox(height: 48),
+                  const SectionsMenu(),
                   SizedBox(height: 450, child: AboutSection()),
                   const SizedBox(height: 24),
                   SizedBox(height: 300, child: SectionsTile()),
