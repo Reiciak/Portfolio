@@ -1,9 +1,7 @@
-
 class Link {
   final String socialMediaName;
   final String socialMediaLink;
   final String socialMediaImagePath;
-
 
   Link({
     required this.socialMediaName,
@@ -13,18 +11,19 @@ class Link {
 }
 
 List<Link> links = [
-Link(
-socialMediaName: 'linkedin',
-socialMediaLink: 'https://www.linkedin.com/in/karolinabolek1/',
-socialMediaImagePath: 'linkedinIcon',
-),
-Link(
-socialMediaName: 'GitHub',
-socialMediaLink: 'https://github.com/Reiciak',
-socialMediaImagePath: 'GitHubIcon_black',
-),
-Link(
-socialMediaName: 'Gmail',
-socialMediaLink: 'mailto:karolina16478@gmail.com',
-socialMediaImagePath: 'gmailIcon',)
+  Link(
+    socialMediaName: 'linkedin',
+    socialMediaLink: 'https://www.linkedin.com/in/karolinabolek1/',
+    socialMediaImagePath: 'linkedinIcon',
+  ),
+  Link(
+    socialMediaName: 'GitHub',
+    socialMediaLink: 'https://github.com/Reiciak',
+    socialMediaImagePath: 'GitHubIcon_black',
+  ),
+  Link(
+    socialMediaName: 'Gmail',
+    socialMediaLink: 'mailto:karolina16478@gmail.com',
+    socialMediaImagePath: 'gmailIcon',
+  ),
 ];

@@ -9,7 +9,7 @@ class SectionsMenu extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Spacer(flex: 2),
+        const Spacer(flex: 3),
         Expanded(
           flex: 3,
           child: SectionNavbar(imagePath: 'About', text: 'Kilka słów o mnie'),
