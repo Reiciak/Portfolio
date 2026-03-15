@@ -1,14 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/calculator_body.dart';
+
 class Project {
   final String title;
   final String description;
   final String imagePath;
   final String tools;
+  final Widget? previewWidget;
 
   Project({
     required this.title,
     required this.description,
     required this.imagePath,
     required this.tools,
+    this.previewWidget,
   });
 }
 
@@ -18,6 +23,7 @@ List<Project> projects = [
     description: 'Prosty projekt kalkulatora',
     imagePath: 'assets/images/calculator.png',
     tools: 'Dart, Flutter, Riverpod 3.0',
+    previewWidget: const CalculatorBody(),
   ),
   Project(
     title: 'Bowling VR',
