@@ -7,9 +7,6 @@ Supports **Web**, **Linux**, and **Windows** targets.
 
 ## 📸 Screenshots
 
-### Home
-![Home](assets/images/PhotoAboutMe.png)
-
 ### Navigation Menu
 ![Navigation Menu](assets/images/Portfolio_menu.png)
 
