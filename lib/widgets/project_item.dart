@@ -28,7 +28,12 @@ class ProjectItem extends StatelessWidget {
               SizedBox(
                 width: imageWidth,
                 height: imageHeight,
-                child: Image.asset(project.imagePath, fit: BoxFit.cover),
+                child: project.previewWidget != null
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: project.previewWidget!,
+                      )
+                    : Image.asset(project.imagePath, fit: BoxFit.cover),
               ),
 
               const SizedBox(height: 10),
