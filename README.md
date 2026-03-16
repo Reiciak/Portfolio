@@ -1,7 +1,7 @@
 # 🗂️ Portfolio — Flutter Web App
 
 A personal portfolio built with **Flutter**, showcasing projects, skills, and contact information.  
-Supports **Web**, **Linux**, and **Windows** targets.
+Supports **Web**, **Linux**, **Windows**, and **Android** targets.
 
 ---
 
@@ -44,6 +44,7 @@ All commands are run from the project root with `make <target>`.
 | `make build-web` | Build for web |
 | `make build-linux` | Build for Linux |
 | `make build-windows` | Build for Windows |
+| `make build-android` | Build for Android |
 | `make clean` | Remove build artifacts |
 | `make help` | Show all available targets |
 
@@ -83,6 +84,7 @@ make run-windows
 make build-web      # outputs to build/web/
 make build-linux    # outputs to build/linux/
 make build-windows  # outputs to build/windows/
+make build-android  # outputs to build/app/outputs/flutter-apk/
 ```
 
 ---

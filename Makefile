@@ -1,7 +1,7 @@
 # Portfolio Flutter Project - Makefile
 # Usage: make <target>
 
-.PHONY: run-chrome run-linux run-windows build-web build-linux build-windows create get clean help
+.PHONY: run-chrome run-linux run-windows build-web build-linux build-windows build-android create get clean help
 
 # ─── Run ──────────────────────────────────────────────
 
@@ -31,6 +31,10 @@ build-linux:
 build-windows:
 	flutter build windows
 
+## Build for Android
+build-android:
+	flutter build apk
+
 # ─── Setup ────────────────────────────────────────────
 
 ## Create a new Flutter project (flutter create .)
@@ -56,6 +60,7 @@ help:
 	@echo "  build-web     - Build for web"
 	@echo "  build-linux   - Build for Linux"
 	@echo "  build-windows - Build for Windows"
+	@echo "  build-android - Build for Android"
 	@echo "  create        - Create Flutter project (flutter create .)"
 	@echo "  get           - Get dependencies (flutter pub get)"
 	@echo "  clean         - Clean build artifacts"
