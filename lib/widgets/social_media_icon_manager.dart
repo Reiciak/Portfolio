@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/configuration_files/path_manager.dart';
 import 'package:portfolio/configuration_files/social_media_links.dart';
 import 'package:portfolio/widgets/social_media_link_manager.dart';
 
@@ -22,11 +23,10 @@ class SocialMediaIconManager extends StatelessWidget {
     for (int i = 0; i < links.length; i++) {
       final link = links[i];
 
-      String currentImagePath = link.socialMediaImagePath;
+      String currentImagePath = PathManager.icon(link.socialMediaImagePath);
 
       if (link.socialMediaName.toLowerCase() == 'github') {
-        currentImagePath =
-        useWhiteIcons ? 'githubIcon_white' : 'githubIcon_black';
+        currentImagePath = PathManager.github(isWhite: useWhiteIcons);
       }
 
       linkWidgets.add(

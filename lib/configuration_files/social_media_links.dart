@@ -19,7 +19,7 @@ List<Link> links = [
   Link(
     socialMediaName: 'GitHub',
     socialMediaLink: 'https://github.com/Reiciak',
-    socialMediaImagePath: 'GitHubIcon_black',
+    socialMediaImagePath: 'githubIcon_black',
   ),
   Link(
     socialMediaName: 'Gmail',

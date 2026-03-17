@@ -27,11 +27,7 @@ class SocialMediaLinkManager extends StatelessWidget {
     return InkWell(
       onTap: () => _launchURL(url),
       borderRadius: BorderRadius.circular(borderRadius),
-      child: Image.asset(
-        'assets/images/$imagePath.png',
-        width: size,
-        height: size,
-      ),
+      child: Image.asset(imagePath, width: size, height: size),
     );
   }
 }
