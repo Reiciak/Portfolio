@@ -1,42 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/configuration_files/container_decoration.dart';
+import 'package:portfolio/configuration_files/path_manager.dart';
 import 'package:portfolio/configuration_files/responsive_layout.dart';
 import 'package:portfolio/configuration_files/skills_list.dart';
 
-Widget _buildTile(Skill skill) {
-  return LayoutBuilder(
-    builder: (context, constraints) {
-      final screenWidth = MediaQuery.of(context).size.width;
-      final responsiveLayout = ResponsiveLayout(
-        constraints: constraints,
-        screenWidth: screenWidth,
-        fontSizeMultiplier: 0.04,
-      );
-
-      return AspectRatio(
-        aspectRatio: 1.0,
-        child: Container(
-          decoration: containerDecoration(borderRadius: 8.0),
-          child: ElevatedButton(
-            onPressed: () {},
-            onLongPress: null,
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
+Widget _buildTile(Skill skill, double fontSize) {
+  return Container(
+    decoration: containerDecoration(borderRadius: 8.0),
+    child: ElevatedButton(
+      onPressed: () {},
+      onLongPress: null,
+      style: ElevatedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+        minimumSize: Size.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+        backgroundColor: const Color(0xFFAED9FF),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (skill.iconPath != null) ...[
+            SizedBox(
+              width: fontSize * 1.5,
+              height: fontSize * 1.5,
+              child: Image.asset(
+                PathManager.icon(skill.iconPath!),
+                fit: BoxFit.contain,
               ),
-              backgroundColor: const Color(0xFFAED9FF),
-              foregroundColor: Colors.white,
             ),
+            const SizedBox(width: 8.0),
+          ],
+          Flexible(
             child: Text(
               skill.displayName,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: responsiveLayout.fontSize),
+              style: TextStyle(
+                fontSize: fontSize,
+                color: const Color.fromARGB(255, 31, 33, 34),
+              ),
             ),
           ),
-        ),
-      );
-    },
+        ],
+      ),
+    ),
   );
 }
 
@@ -48,40 +55,22 @@ class SkillTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    final int columns;
-    if (screenWidth < 480) {
-      columns = 3;
-    } else if (screenWidth < 768) {
-      columns = 4;
-    } else {
-      columns = 6;
-    }
-    final int rows = (skills.length / columns).ceil();
+    const double spacing = 16.0;
 
-    return Column(
-      children: List.generate(rows, (rowIndex) {
-        final int startIndex = rowIndex * columns;
-        final int endIndex = (startIndex + columns).clamp(0, skills.length);
-        final skillsInRow = skills.sublist(startIndex, endIndex);
+    final responsiveLayout = ResponsiveLayout(
+      constraints: const BoxConstraints(),
+      screenWidth: screenWidth,
+      fontSizeMultiplier: 0.04,
+    );
+    final double fontSize = responsiveLayout.fontSize;
 
-        return Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(
-              bottom: rowIndex < rows - 1 ? 8.0 : 0,
-              left: 16.0,
-              right: 16.0,
-            ),
-            child: Row(
-              children: [
-                for (int i = 0; i < skillsInRow.length; i++) ...[
-                  Expanded(child: _buildTile(skillsInRow[i])),
-                  if (i < skillsInRow.length - 1) const SizedBox(width: 16.0),
-                ],
-              ],
-            ),
-          ),
-        );
-      }),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Wrap(
+        spacing: spacing,
+        runSpacing: spacing,
+        children: skills.map((skill) => _buildTile(skill, fontSize)).toList(),
+      ),
     );
   }
 }
