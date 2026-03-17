@@ -27,7 +27,7 @@ class MainPage extends StatelessWidget {
                   const SectionsMenu(),
                   SizedBox(height: 450, child: AboutSection()),
                   const SizedBox(height: 24),
-                  SizedBox(height: 300, child: SectionsTile()),
+                  SizedBox(height: 450, child: SectionsTile()),
                   const SizedBox(height: 24),
                   Align(
                     alignment: Alignment.center,
